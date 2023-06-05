@@ -135,6 +135,9 @@ void get_args_based_on_kwargs(SCAMP::SCAMPArgs* args, py::kwargs kwargs,
       }
     } else if (key == "verbose") {
       args->silent_mode = !item.second.cast<bool>();
+    }
+    } else if (key == "aligned") {
+      args->is_aligned = !item.second.cast<bool>();
     } else if (key == "mheight") {
       args->matrix_height = item.second.cast<int>();
       if (args->matrix_height <= 0) {
